@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#17122b">
+  <title>MEET WITH UWAWE — Make meaningful connections</title>
+  <style>
+    :root{--ink:#211b35;--muted:#716b80;--purple:#7556d8;--pink:#f08cae;--cream:#fffaf7;--line:#eee8f2}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--cream)}
+    a{color:inherit;text-decoration:none}.wrap{width:min(1120px,92%);margin:auto}
+    header{background:#17122b;color:white;padding:18px 0;position:sticky;top:0;z-index:5}
+    nav{display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{font-weight:850;letter-spacing:.04em;font-size:1.05rem}.brand span{color:#f5a0bd}
+    .navlinks{display:flex;gap:24px;align-items:center;font-size:.92rem;color:#e8e2f2}
+    .navlinks a:hover{color:#ffb2cb}.navcta,.btn{display:inline-block;border:0;border-radius:999px;padding:12px 19px;font-weight:750;cursor:pointer}
+    .navcta,.btn.primary{background:linear-gradient(110deg,var(--purple),#a45bc9);color:white}
+    .hero{padding:78px 0 68px;background:radial-gradient(circle at 80% 20%,#f8dce8 0,transparent 32%),linear-gradient(135deg,#f8f2ff,#fffaf7 58%,#fff0f4)}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:45px}
+    .eyebrow{display:inline-block;background:#eee6ff;color:#694bc4;border-radius:99px;padding:8px 13px;font-size:.8rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+    h1{font-size:clamp(2.6rem,6vw,4.9rem);line-height:1.02;letter-spacing:-.055em;margin:20px 0}
+    h1 em{font-style:normal;color:var(--purple)}.lead{font-size:1.12rem;line-height:1.7;color:var(--muted);max-width:560px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn.secondary{border:1px solid #dcd2e8;background:white;color:var(--ink)}
+    .hero-art{min-height:360px;border-radius:32px;background:linear-gradient(145deg,#6d4fc7,#a45bc9 55%,#ed91b2);position:relative;overflow:hidden;display:grid;place-items:center;box-shadow:0 24px 70px #6e4bb52c}
+    .orb{position:absolute;border-radius:50%;background:#ffffff22}.orb.one{width:270px;height:270px;top:-75px;right:-40px}.orb.two{width:180px;height:180px;bottom:-65px;left:-35px}
+    .quote-card{position:relative;background:#fff;color:var(--ink);padding:30px;border-radius:24px;width:min(78%,330px);box-shadow:0 18px 50px #21123b30;transform:rotate(-4deg)}
+    .quote-card .faces{font-size:2.5rem;letter-spacing:-.3em;margin-bottom:12px}.quote-card h3{font-size:1.4rem;margin:0 0 8px}.quote-card p{color:var(--muted);line-height:1.55;margin:0}
+    section{padding:70px 0}.section-head{text-align:center;max-width:650px;margin:0 auto 34px}.section-head h2{font-size:clamp(1.8rem,4vw,2.7rem);letter-spacing:-.04em;margin:0 0 12px}.section-head p{color:var(--muted);line-height:1.65;margin:0}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.feature{padding:25px;background:white;border:1px solid var(--line);border-radius:22px}.feature .ico{font-size:1.8rem}.feature h3{margin:13px 0 8px}.feature p{color:var(--muted);line-height:1.6;margin:0}
+    .profiles{background:#f5f0fb}.profile-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.profile{background:white;border:1px solid var(--line);border-radius:22px;overflow:hidden}.avatar{height:175px;display:grid;place-items:center;font-size:4.5rem;background:linear-gradient(135deg,#f7dbe8,#e6ddff)}.profile:nth-child(2) .avatar{background:linear-gradient(135deg,#d9ecf8,#f6dfe9)}.profile:nth-child(3) .avatar{background:linear-gradient(135deg,#fbe6c9,#e5ddff)}
+    .profile-body{padding:19px}.profile-body h3{margin:0 0 5px}.meta{font-size:.86rem;color:var(--muted)}.profile-body p{font-size:.92rem;color:var(--muted);line-height:1.55;min-height:44px}.tag{display:inline-block;font-size:.76rem;background:#f1ebff;color:#684bc0;border-radius:99px;padding:6px 10px}
+    .notice{margin:18px auto 0;max-width:800px;text-align:center;color:var(--muted);font-size:.85rem;line-height:1.5}
+    .cta{background:#17122b;color:white;text-align:center;border-radius:30px;padding:52px 25px}.cta h2{font-size:clamp(1.8rem,4vw,2.7rem);margin:0 0 12px}.cta p{color:#d4cde1;line-height:1.6;margin:0 auto 22px;max-width:570px}
+    footer{padding:28px 0;color:var(--muted);font-size:.86rem}.foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    .modal{display:none;position:fixed;inset:0;background:#120d22b8;z-index:10;place-items:center;padding:18px}.modal.open{display:grid}.dialog{background:white;border-radius:24px;padding:26px;width:min(100%,440px);position:relative}.dialog h2{margin-top:0}.dialog p{color:var(--muted);line-height:1.55}.close{position:absolute;right:18px;top:14px;border:0;background:none;font-size:1.5rem;cursor:pointer}
+    label{display:block;font-size:.88rem;font-weight:700;margin:13px 0 6px}input,textarea,select{width:100%;border:1px solid #ddd4e8;border-radius:12px;padding:12px;font:inherit;background:white}textarea{min-height:85px;resize:vertical}.dialog .btn{margin-top:16px;width:100%}.success{display:none;background:#edf8f0;color:#24643a;border-radius:12px;padding:12px;margin-top:12px;font-size:.9rem}
+    @media(max-width:760px){.navlinks{display:none}.hero{padding:55px 0}.hero-grid{grid-template-columns:1fr}.hero-art{min-height:290px}.features,.profile-grid{grid-template-columns:1fr}.profile-grid{max-width:430px;margin:auto}section{padding:55px 0}}
+  </style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+  <a class="brand" href="#home">MEET WITH <span>UWAWE</span></a>
+  <div class="navlinks"><a href="#about">About</a><a href="#how">How it works</a><a href="#discover">Discover</a></div>
+  <button class="navcta" onclick="openModal()">Join the community</button>
+</nav></div></header>
+<main id="home">
+  <div class="hero"><div class="wrap hero-grid">
+    <div><span class="eyebrow">Real people • Meaningful connections</span>
+      <h1>Good connections<br>start with <em>hello.</em></h1>
+      <p class="lead">MEET WITH UWAWE is a welcoming space to introduce yourself, discover interesting people and start conversations that could become meaningful relationships.</p>
+      <div class="actions"><button class="btn primary" onclick="openModal()">Create an introduction</button><a class="btn secondary" href="#how">How it works</a></div>
+    </div>
+    <div class="hero-art"><div class="orb one"></div><div class="orb two"></div><div class="quote-card"><div class="faces">👩🏽‍🦱 👨🏻‍🦱</div><h3>Meet. Connect. Grow.</h3><p>Every great connection begins with a simple introduction.</p></div></div>
+  </div></div>
+  <section id="about"><div class="wrap"><div class="section-head"><h2>A friendlier way to meet</h2><p>Share a little about yourself and get to know others at your own pace. Be genuine, be respectful and let every conversation begin naturally.</p></div>
+    <div class="features">
+      <article class="feature"><div class="ico">🙋</div><h3>Introduce yourself</h3><p>Create a profile that shares your interests, personality and what kind of connection you hope to find.</p></article>
+      <article class="feature"><div class="ico">💬</div><h3>Start a conversation</h3><p>Use a thoughtful introduction to break the ice and get to know someone respectfully.</p></article>
+      <article class="feature"><div class="ico">🤝</div><h3>Build real connections</h3><p>Take your time, communicate clearly and focus on shared interests and mutual respect.</p></article>
+    </div>
+  </div></section>
+  <section class="profiles" id="discover"><div class="wrap"><div class="section-head"><h2>Meet the community</h2><p>These are sample profile cards to demonstrate the design. They are fictional placeholders, not real members.</p></div>
+    <div class="profile-grid">
+      <article class="profile"><div class="avatar">👩🏽</div><div class="profile-body"><h3>Sample profile</h3><div class="meta">Loves travel & music</div><p>Enjoys meeting new people, discovering cultures and having good conversations.</p><span class="tag">Friendship & dating</span></div></article>
+      <article class="profile"><div class="avatar">👨🏾</div><div class="profile-body"><h3>Sample profile</h3><div class="meta">Food, fitness & films</div><p>Positive-minded and curious, looking to connect with someone who shares good energy.</p><span class="tag">Meaningful connection</span></div></article>
+      <article class="profile"><div class="avatar">👩🏻</div><div class="profile-body"><h3>Sample profile</h3><div class="meta">Books & nature</div><p>Believes the best relationships begin with kindness, honesty and friendship.</p><span class="tag">Getting to know people</span></div></article>
+    </div>
+    <p class="notice">For privacy, only publish information you are comfortable sharing. Meet in public places, verify who you are speaking with and never send money to someone you have not met.</p>
+  </div></section>
+  <section id="how"><div class="wrap"><div class="section-head"><h2>How it works</h2><p>A simple first step towards meeting someone new.</p></div>
+    <div class="features">
+      <article class="feature"><div class="ico">1️⃣</div><h3>Make your introduction</h3><p>Tell the community a little about who you are and what you enjoy.</p></article>
+      <article class="feature"><div class="ico">2️⃣</div><h3>Discover others</h3><p>Explore introductions and look for shared interests and values.</p></article>
+      <article class="feature"><div class="ico">3️⃣</div><h3>Connect respectfully</h3><p>Start with a friendly message and see where the conversation goes.</p></article>
+    </div>
+  </div></section>
+  <section><div class="wrap"><div class="cta"><h2>Your next connection starts here.</h2><p>Ready to introduce yourself? Join the MEET WITH UWAWE community and take the first step.</p><button class="btn primary" onclick="openModal()">Get started</button></div></div></section>
+</main>
+<footer><div class="wrap foot"><strong>MEET WITH UWAWE</strong><span>Connecting people, one introduction at a time.</span><span>© <span id="year"></span> MEET WITH UWAWE</span></div></footer>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="dialog"><button class="close" aria-label="Close" onclick="closeModal()">×</button><h2 id="modalTitle">Create your introduction</h2><p>This is a front-end preview. Submitting this form will not publish or save your information yet.</p>
+    <form id="introForm"><label for="name">Your name</label><input id="name" name="name" required placeholder="Enter your name">
+      <label for="age">Age (18+ only)</label><input id="age" name="age" type="number" min="18" required placeholder="18 or older">
+      <label for="aboutYou">A short introduction</label><textarea id="aboutYou" name="aboutYou" required placeholder="Share a little about yourself"></textarea>
+      <label for="goal">What kind of connection are you looking for?</label><select id="goal" name="goal"><option>Dating</option><option>Friendship</option><option>Open to both</option></select>
+      <button class="btn primary" type="submit">Preview my introduction</button><div class="success" id="success">Thanks! Your demo introduction is ready to be connected to a real sign-up system.</div>
+    </form>
+  </div>
+</div>
+<script>
+  const modal=document.getElementById('modal');
+  function openModal(){modal.classList.add('open')}
+  function closeModal(){modal.classList.remove('open')}
+  modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+  document.getElementById('year').textContent=new Date().getFullYear();
+  document.getElementById('introForm').addEventListener('submit',e=>{
+    e.preventDefault();
+    const age=Number(document.getElementById('age').value);
+    if(age<18){alert('This dating introduction is for adults aged 18 and over.');return;}
+    document.getElementById('success').style.display='block';
+  });
+</script>
+</body>
+</html>
